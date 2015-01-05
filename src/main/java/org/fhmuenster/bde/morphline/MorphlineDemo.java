@@ -20,13 +20,16 @@
  * The original source is here:
  * https://github.com/kite-sdk/kite/blob/master/kite-morphlines/kite-morphlines-core/src/test/java/org/kitesdk/morphline/api/MorphlineDemo.java
  */
-package com.cloudera.cdk.morphline;
+package org.fhmuenster.bde.morphline;
 
 import java.io.*;
 
-import com.cloudera.cdk.morphline.api.*;
-import com.cloudera.cdk.morphline.base.*;
-import com.cloudera.cdk.morphline.base.Compiler;
+import org.kitesdk.morphline.api.Command;
+import org.kitesdk.morphline.api.MorphlineContext;
+import org.kitesdk.morphline.api.Record;
+import org.kitesdk.morphline.base.Fields;
+import org.kitesdk.morphline.base.Notifications;
+import org.kitesdk.morphline.base.Compiler;
 
 /**
  * Sample program that illustrates how to use the API to embed and execute a morphline

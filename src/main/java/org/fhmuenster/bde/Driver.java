@@ -1,8 +1,7 @@
 package org.fhmuenster.bde;
 
-import com.cloudera.cdk.morphline.MorphlineDemo;
-
 import org.apache.hadoop.util.ProgramDriver;
+import org.fhmuenster.bde.morphline.MorphlineDemo;
 import org.fhmuenster.bde.mr.tfidf.TFIDFJobController;
 
 public class Driver {
