@@ -6,13 +6,13 @@
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
             <configuration>
-<property><name>mapreduce.input.fileinputformat.inputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/books</value></property>
-<property><name>mapreduce.job.map.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocMapper</value></property>
-<property><name>mapreduce.job.output.key.class</name><value>org.apache.hadoop.io.Text</value></property>
-<property><name>mapreduce.job.output.value.class</name><value>org.apache.hadoop.io.IntWritable</value></property>
-<property><name>mapreduce.job.reduce.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocReducer</value></property>
-<property><name>mapreduce.job.name</name><value>Word Frequency In Document</value></property>
-<property><name>mapreduce.output.fileoutputformat.outputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/1-word-freq</value></property>
+                <property><name>mapreduce.input.fileinputformat.inputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/books</value></property>
+                <property><name>mapreduce.job.map.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocMapper</value></property>
+                <property><name>mapreduce.job.output.key.class</name><value>org.apache.hadoop.io.Text</value></property>
+                <property><name>mapreduce.job.output.value.class</name><value>org.apache.hadoop.io.IntWritable</value></property>
+                <property><name>mapreduce.job.reduce.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocReducer</value></property>
+                <property><name>mapreduce.job.name</name><value>Word Frequency In Document</value></property>
+                <property><name>mapreduce.output.fileoutputformat.outputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/1-word-freq</value></property>
             </configuration>
         </map-reduce>
         <ok to="DocsInCorpusList"/>
@@ -22,16 +22,15 @@
         <map-reduce>
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
-             <configuration>
-             <property><name>mapreduce.input.fileinputformat.inputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/books</value></property>
-             <property><name>mapreduce.job.map.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocMapper</value></property>
-             <property><name>mapreduce.job.output.key.class</name><value>org.apache.hadoop.io.Text</value></property>
-             <property><name>mapreduce.job.output.value.class</name><value>org.apache.hadoop.io.IntWritable</value></property>
-             <property><name>mapreduce.job.reduce.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocReducer</value></property>
-             <property><name>mapreduce.job.name</name><value>Word Frequency In Document</value></property>
-             <property><name>mapreduce.output.fileoutputformat.outputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/1-word-freq</value></property>
-             </configuration>
-
+            <configuration>
+                <property><name>mapreduce.input.fileinputformat.inputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/1-word-freq</value></property>
+                <property><name>mapreduce.job.map.class</name><value>org.fhmuenster.bde.mr.tfidf.WordCountsInDocuments$WordCountsForDocsMapper</value></property>
+                <property><name>mapreduce.job.output.key.class</name><value>org.apache.hadoop.io.Text</value></property>
+                <property><name>mapreduce.job.output.value.class</name><value>org.apache.hadoop.io.Text</value></property>
+                <property><name>mapreduce.job.reduce.class</name><value>org.fhmuenster.bde.mr.tfidf.WordCountsInDocuments.WordCountsForDocsReducer</value></property>
+                <property><name>mapreduce.job.name</name><value>Word Counts</value></property>
+                <property><name>mapreduce.output.fileoutputformat.outputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/2-word-freq</value></property>
+            </configuration>
         </map-reduce>
         <ok to="NumOfDocsInCorpus"/>
         <error to="kill"/>
@@ -40,14 +39,14 @@
         <map-reduce>
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
-             <configuration>
-             <property><name>mapreduce.input.fileinputformat.inputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/books</value></property>
-             <property><name>mapreduce.job.map.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocMapper</value></property>
-             <property><name>mapreduce.job.output.key.class</name><value>org.apache.hadoop.io.Text</value></property>
-             <property><name>mapreduce.job.output.value.class</name><value>org.apache.hadoop.io.IntWritable</value></property>
-             <property><name>mapreduce.job.reduce.class</name><value>org.fhmuenster.bde.mr.tfidf.WordFrequencyInDocument$WordFrequencyInDocReducer</value></property>
-             <property><name>mapreduce.job.name</name><value>Word Frequency In Document</value></property>
-             <property><name>mapreduce.output.fileoutputformat.outputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/1-word-freq</value></property>
+            <configuration>
+                <property><name>mapreduce.input.fileinputformat.inputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/books</value></property>
+                <property><name>mapreduce.job.map.class</name><value>org.fhmuenster.bde.mr.tfidf.WordsInCorpusTFIDF$WordsInCorpusTFIDFMapper</value></property>
+                <property><name>mapreduce.job.output.key.class</name><value>org.apache.hadoop.io.Text</value></property>
+                <property><name>mapreduce.job.output.value.class</name><value>org.apache.hadoop.io.Text</value></property>
+                <property><name>mapreduce.job.reduce.class</name><value>org.fhmuenster.bde.mr.tfidf.WordsInCorpusTFIDF.WordsInCorpusTFIDFReducer</value></property>
+                <property><name>mapreduce.job.name</name><value>TF-IDF of Words in Corpus</value></property>
+                <property><name>mapreduce.output.fileoutputformat.outputdir</name><value>hdfs://quickstart.cloudera:8020/user/cloudera/3-results</value></property>
             </configuration>
         </map-reduce>
         <ok to="end"/>
