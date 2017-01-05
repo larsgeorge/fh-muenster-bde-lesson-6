@@ -406,6 +406,11 @@
       <artifactId>kite-morphlines-core</artifactId>
       <version>0.17.1</version>
     </dependency>
+    <dependency>
+      <groupId>org.kitesdk</groupId>
+      <artifactId>kite-morphlines-json</artifactId>
+      <version>0.17.1</version>
+    </dependency>
 
     <!-- Commons Dependencies -->
     <dependency>
