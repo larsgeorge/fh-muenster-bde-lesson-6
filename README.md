@@ -84,10 +84,11 @@ total 33360
 -rw-rw-r-- 1 cloudera cloudera 34158536 Jan  8 04:52 fh-muenster-bde-lesson-6-1.0-SNAPSHOT-bin.jar
 ```
 
-Was nun noch nötig ist, ist das Kopieren des Verzeichnisses in HDFS:
+Was nun noch nötig ist, ist das Kopieren des Verzeichnisses (und der Buchdaten) in HDFS:
 
 ```
-[cloudera@quickstart fh-muenster-bde-lesson-6]$ hdfs dfs -put oozie-tfidf oozie-tfidf
+[cloudera@quickstart fh-muenster-bde-lesson-6]$ hdfs dfs -put oozie-tfidf
+[cloudera@quickstart fh-muenster-bde-lesson-6]$ hdfs dfs -put src/main/resources/books
 ```
 
 Dann kann man den Workflow manuell über die Oozie CLI starten und auch den Status nachfolgend abfragen:
